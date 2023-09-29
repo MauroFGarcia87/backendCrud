@@ -34,10 +34,4 @@ app.listen(app.get('port'), ()=>{
 // Crear Rutas
 app.use('/apicrud', router);
 
-//app.get('/', (req, res) =>{
-  //  res.send('Hola Mundo desde Backend')
-//})
 
-//app.delete('/borrardatos', (req, res) =>{
-  //  res.send('borramos los datos')
-//})
