@@ -3,6 +3,7 @@ import res from 'express/lib/response';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
+import router from './routes/producto.routes';
 
 console.log('Hola BackEnd');
 
@@ -31,10 +32,12 @@ app.listen(app.get('port'), ()=>{
 })
 
 // Crear Rutas
-app.get('/', (req, res) =>{
-    res.send('Hola Mundo desde Backend')
-})
+app.use('/apicrud', router);
 
-app.delete('/borrardatos', (req, res) =>{
-    res.send('borramos los datos')
-})
+//app.get('/', (req, res) =>{
+  //  res.send('Hola Mundo desde Backend')
+//})
+
+//app.delete('/borrardatos', (req, res) =>{
+  //  res.send('borramos los datos')
+//})
