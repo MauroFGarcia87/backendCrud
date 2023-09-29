@@ -9,6 +9,8 @@ productoCtrl.borrarProducto = (req, res) =>{
     res.send('Aqui borro los productos');
 }
 productoCtrl.crearProducto = (req, res) =>{
+    console.log(req);
+    console.log(req.body);
     res.send('Quiero crear un producto');
 }
 
