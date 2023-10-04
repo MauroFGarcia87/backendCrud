@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import router from './routes/producto.routes';
+import './database';
 
 console.log('Hola BackEnd');
 
