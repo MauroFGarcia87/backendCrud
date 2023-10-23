@@ -47,4 +47,17 @@ productoCtrl.crearProducto = async(req, res) =>{
     }
 }
 
+productoCtrl.obtenerProducto = async(req, res) => {
+    try {
+        //Obtener el parametro de la ruta
+        console.log(req.params.id);
+        //Creo el objeto y lo busco en la base de datos
+        const productoBuscado = await Producto.findById(req.params.id);
+        res.status(200).json(productoBuscado);
+    } catch (error) {
+        console.log(error)
+        res.status(404).json({mensaje: 'No se pudo obtener el producto solicitado'})
+    }
+}
+
 export default productoCtrl;
