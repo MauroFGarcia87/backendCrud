@@ -72,4 +72,16 @@ productoCtrl.borrarProducto = async(req, res) => {
     }
 }
 
+productoCtrl.editarProducto = async(req, res) => {
+    try {
+       //Buscar el producto con el id y modificar los datos que me llegan en el body
+       await Producto.findByIdAndUpdate(req.params.id, req.body);
+       res.status(200).json({mensaje: 'Se modifico el producto solicitado'});
+       
+    } catch (error) {
+        console.log(error)
+        res.status(404).json({mensaje: 'No se pudo modificar el producto solicitado'});
+    }
+}
+
 export default productoCtrl;
